@@ -1,5 +1,6 @@
 # TIMM at the Edge: How I Deploy SOTA Image Model on Android with TorchScript and Flutter - For Free
 
+![img](https://dicksonneoh.com/images/portfolio/timm_torchscript_flutter/post_image.png)
 
 A companion repo for the blog post (in progress).
 
