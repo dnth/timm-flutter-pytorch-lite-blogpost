@@ -14,3 +14,4 @@ If you like what you see, support me in keeping the lights on to produce more po
 
 + https://github.com/zezo357/pytorch_lite
 + https://github.com/rwightman/pytorch-image-models
++ https://www.kaggle.com/code/jhoward/first-steps-road-to-the-top-part-1
