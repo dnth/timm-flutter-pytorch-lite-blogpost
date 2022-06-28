@@ -2,7 +2,9 @@
 
 ![img](https://dicksonneoh.com/images/portfolio/timm_torchscript_flutter/post_image.png)
 
-A companion repo for the blog post (in progress).
+A companion repo for the blog [post](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
+
+View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 
 # ❤️ Support Me
 If you like what you see, support me in keeping the lights on to produce more posts like this.
