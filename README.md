@@ -6,13 +6,13 @@ A companion repo for the blog [post](https://dicksonneoh.com/portfolio/timm_torc
 
 View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 
-# ❤️ Support Me
+## ❤️ Support Me
 If you like what you see, support me in keeping the lights on to produce more posts like this.
 
 <a href="https://www.buymeacoffee.com/dicksonneoh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 
-# 🙏 Acknowledgement
+## 🙏 Acknowledgement
 
 + https://github.com/zezo357/pytorch_lite
 + https://github.com/rwightman/pytorch-image-models
