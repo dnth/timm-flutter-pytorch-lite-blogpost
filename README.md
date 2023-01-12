@@ -2,7 +2,7 @@
 
 ![img](https://dicksonneoh.com/images/portfolio/timm_torchscript_flutter/post_image.png)
 
-A companion repo for the blog [post](https://dicksonneoh.com/portfolio/timm_torchscript_flutter/).
+A companion repo for the blog post [TIMM at the Edge: Deploying Over 964 PyTorch Models on Android with TorchScript and Flutter](https://dicksonneoh.com/portfolio/timm_torchscript_flutter/).
 
 View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 
