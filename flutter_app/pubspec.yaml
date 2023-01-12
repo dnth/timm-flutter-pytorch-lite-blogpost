@@ -48,7 +48,7 @@ dependencies:
   loader_overlay: ^2.0.4+3
   photo_view: ^0.13.0
   back_button_interceptor: ^5.0.1
-  pytorch_lite: ^1.0.6
+  pytorch_lite: ^1.1.2
   empty_widget: ^0.0.3
 
 dev_dependencies:
@@ -79,7 +79,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/models/model.pt
+    - assets/models/model_edgenextxxs.pt
     - assets/labels/label_classification_paddy.txt
 
   # An image asset can refer to one or more resolution-specific "variants", see
