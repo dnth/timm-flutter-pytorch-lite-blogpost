@@ -6,6 +6,14 @@ A companion repo for the blog [post](https://dicksonneoh.com/portfolio/timm_torc
 
 View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 
+## Folder Structure
+
+* `data` -- Stores all the data to train the model.
+
+* `flutter_app` -- Codes for the Flutter app.
+
+* `train` -- Training notebook and related files.
+
 ## ❤️ Support Me
 If you like what you see, support me in keeping the lights on to produce more posts like this.
 
