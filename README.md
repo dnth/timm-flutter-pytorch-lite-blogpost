@@ -15,7 +15,8 @@ View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 * `train` -- Training notebook and related files.
 
 ## 📞 Connect with me
-I'm active on the following platforms. Drop me a message or connect with me.
+If you have any questions or feedback, please don't hesitate to reach out to me.
+I'm active on the following platforms.
 <p align="left">
       <a href="https://www.linkedin.com/in/dickson-neoh/" target="blank"><img align="center"
             src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
@@ -41,9 +42,6 @@ I am thrilled to share my work with you and I hope you find it useful. If you do
 <a href="https://www.buymeacoffee.com/dicksonneoh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 If you like my work, please also consider sharing this repository on your social media.
-
-
-
 
 ## 🙏 Acknowledgement
 
