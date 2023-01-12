@@ -20,7 +20,7 @@ If you like what you see, support me in keeping the lights on to produce more po
 <a href="https://www.buymeacoffee.com/dicksonneoh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## 📞 Connect with me
-I'm active on the following platform.
+I'm active on the following platforms. Drop me a message or connect with me.
 <p align="left">
       <a href="https://www.linkedin.com/in/dickson-neoh/" target="blank"><img align="center"
             src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
