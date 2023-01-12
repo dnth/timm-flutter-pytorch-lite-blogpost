@@ -25,12 +25,13 @@ I'm active on the following platforms. Drop me a message or connect with me.
             src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
       <a href="https://www.youtube.com/channel/UCJckpaGYra_p9ixmEDvYARA" target="blank"><img align="center"
             src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" /></a>
+      <a href="mailto:dickson.neoh@gmail.com" target="blank"><img align="center"
+            src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"
+            alt="dnth" /></a>
       <a href="https://dicksonneoh.com/" target="blank"><img align="center"
             src="https://raw.githubusercontent.com/dnth/dnth.github.io/main/static/images/site-navigation/logo_dn.png"
             alt="dnth" height="45" /></a>
-        <a href="mailto:dickson.neoh@gmail.com" target="blank"><img align="center"
-            src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"
-            alt="dnth" /></a>
+        
 </p>
 
 ## ❤️ Support Me
