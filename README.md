@@ -1,4 +1,4 @@
-# TIMM at the Edge: How to Deploy 645 PyTorch Image Models on Android with TorchScript and Flutter
+# TIMM at the Edge: Deploying Over 964 PyTorch Models on Android with TorchScript and Flutter
 
 ![img](https://dicksonneoh.com/images/portfolio/timm_torchscript_flutter/post_image.png)
 
