@@ -6,7 +6,7 @@ A companion repo for the blog post [TIMM at the Edge: Deploying Over 964 PyTorch
 
 View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 
-## Folder Structure
+## 📂 Folder Structure
 
 * `data` -- Stores all the data to train the model.
 
@@ -14,7 +14,7 @@ View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 
 * `train` -- Training notebook and related files.
 
-## 📞 Connect with me
+## 📞 Questions? Connect with me
 If you have any questions or feedback, please don't hesitate to reach out to me.
 I'm active on the following platforms.
 <p align="left">
@@ -33,15 +33,16 @@ I'm active on the following platforms.
       <a href="https://dicksonneoh.com/" target="blank"><img align="center"
             src="https://raw.githubusercontent.com/dnth/dnth.github.io/main/static/images/site-navigation/logo_dn.png"
             alt="dnth" height="45" /></a>
-        
 </p>
 
 ## ❤️ Support Me
-I am thrilled to share my work with you and I hope you find it useful. If you do, please consider supporting my efforts by making a donation and/or sharing this repository on your social media. Your support will help me to continue developing and maintaining this project, as well as create new ones.
+I am thrilled to share my work with you and I hope you find it useful. 
+
+If you do, please consider supporting my efforts by making a donation and/or sharing this repository on your social media. 
+
+Your support will help me to continue developing and maintaining this project, as well as create new ones.
 
 <a href="https://www.buymeacoffee.com/dicksonneoh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
-If you like my work, please also consider sharing this repository on your social media.
 
 ## 🙏 Acknowledgement
 
