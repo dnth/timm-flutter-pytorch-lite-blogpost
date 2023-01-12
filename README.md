@@ -14,11 +14,6 @@ View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 
 * `train` -- Training notebook and related files.
 
-## ❤️ Support Me
-If you like what you see, support me in keeping the lights on to produce more posts like this.
-
-<a href="https://www.buymeacoffee.com/dicksonneoh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
 ## 📞 Connect with me
 I'm active on the following platforms. Drop me a message or connect with me.
 <p align="left">
@@ -33,10 +28,25 @@ I'm active on the following platforms. Drop me a message or connect with me.
       <a href="https://dicksonneoh.com/" target="blank"><img align="center"
             src="https://raw.githubusercontent.com/dnth/dnth.github.io/main/static/images/site-navigation/logo_dn.png"
             alt="dnth" height="45" /></a>
+        <a href="mailto:dickson.neoh@gmail.com" target="blank"><img align="center"
+            src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"
+            alt="dnth" /></a>
 </p>
+
+## ❤️ Support Me
+I am thrilled to share my work with you and I hope you find it useful. If you do, please consider supporting my efforts by making a donation and/or sharing this repository on your social media. Your support will help me to continue developing and maintaining this project, as well as create new ones.
+
+<a href="https://www.buymeacoffee.com/dicksonneoh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+If you like my work, please also consider sharing this repository on your social media.
+
+
+
 
 ## 🙏 Acknowledgement
 
 + https://github.com/zezo357/pytorch_lite
 + https://github.com/rwightman/pytorch-image-models
 + https://www.kaggle.com/code/jhoward/first-steps-road-to-the-top-part-1
+
+
