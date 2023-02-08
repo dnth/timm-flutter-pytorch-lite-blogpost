@@ -1,6 +1,6 @@
 # TIMM at the Edge: Deploying Over 964 PyTorch Models on Android with TorchScript and Flutter
 
-![img](https://dicksonneoh.com/images/portfolio/timm_torchscript_flutter/post_image.gif)
+![img](https://dicksonneoh.com/images/portfolio/pytorch_at_the_edge_timm_torchscript_flutter/post_image.gif)
 
 A companion repo for the blog post [TIMM at the Edge: Deploying Over 964 PyTorch Models on Android with TorchScript and Flutter](https://dicksonneoh.com/portfolio/timm_torchscript_flutter/).
 
@@ -13,6 +13,12 @@ View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 * `flutter_app` -- Codes for the Flutter app.
 
 * `train` -- Training notebook and related files.
+
+## ⛄ Demo
+The following screen recording shows the app running in real time.
+
+![anim](https://user-images.githubusercontent.com/6821286/217421782-af8222e1-a9f4-4526-8a5a-3ee595b4a2ac.gif)
+
 
 ## 📞 Questions? Connect with me
 If you have any questions or feedback, please don't hesitate to reach out to me.
