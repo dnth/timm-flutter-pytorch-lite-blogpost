@@ -2,9 +2,7 @@
 
 ![img](https://dicksonneoh.com/images/portfolio/pytorch_at_the_edge_timm_torchscript_flutter/post_image.gif)
 
-A companion repo for the blog post [PyTorch at the Edge: Deploying Over 964 TIMM Models on Android with TorchScript and Flutter](https://dicksonneoh.com/portfolio/timm_torchscript_flutter/).
-
-View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
+A companion repo for the blog post [PyTorch at the Edge: Deploying Over 964 TIMM Models on Android with TorchScript and Flutter](https://dicksonneoh.com/portfolio/pytorch_at_the_edge_timm_torchscript_flutter/).
 
 ## 📂 Folder Structure
 
@@ -19,7 +17,7 @@ The following screen recording shows the app running in real time.
 
 ![anim](https://user-images.githubusercontent.com/6821286/217421782-af8222e1-a9f4-4526-8a5a-3ee595b4a2ac.gif)
 
-Try out the pre-built apk on your Android phone [here](https://github.com/dnth/timm-flutter-pytorch-lite-blogpost/blob/main/app-release.apk?raw=true).
+Install the pre-built `.apk` on your Android phone [here](https://github.com/dnth/timm-flutter-pytorch-lite-blogpost/blob/main/app-release.apk?raw=true).
 
 ## 📞 Questions? Connect with me
 If you have any questions or feedback, please don't hesitate to reach out to me.
