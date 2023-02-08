@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
 
   //load your model
   Future loadModel() async {
-    String pathImageModel = "assets/models/model_edgenextxxs.pt";
+    String pathImageModel = "assets/models/torchscript_edgenext_xx_small.pt";
     //String pathCustomModel = "assets/models/custom_model.ptl";
     // String pathObjectDetectionModel = "assets/models/best.torchscript";
     try {
