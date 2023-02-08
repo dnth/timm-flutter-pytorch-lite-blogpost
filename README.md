@@ -14,6 +14,12 @@ View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 
 * `train` -- Training notebook and related files.
 
+## ⛄ Demo
+The following screen recording shows the app running in real time.
+
+![anim](https://user-images.githubusercontent.com/6821286/217421782-af8222e1-a9f4-4526-8a5a-3ee595b4a2ac.gif)
+
+
 ## 📞 Questions? Connect with me
 If you have any questions or feedback, please don't hesitate to reach out to me.
 I'm active on the following platforms.
