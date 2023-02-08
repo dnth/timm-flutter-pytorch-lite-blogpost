@@ -1,8 +1,8 @@
-# TIMM at the Edge: Deploying Over 964 PyTorch Models on Android with TorchScript and Flutter
+# PyTorch at the Edge: Deploying Over 964 TIMM Models on Android with TorchScript and Flutter
 
 ![img](https://dicksonneoh.com/images/portfolio/pytorch_at_the_edge_timm_torchscript_flutter/post_image.gif)
 
-A companion repo for the blog post [TIMM at the Edge: Deploying Over 964 PyTorch Models on Android with TorchScript and Flutter](https://dicksonneoh.com/portfolio/timm_torchscript_flutter/).
+A companion repo for the blog post [PyTorch at the Edge: Deploying Over 964 TIMM Models on Android with TorchScript and Flutter](https://dicksonneoh.com/portfolio/timm_torchscript_flutter/).
 
 View Kaggle [notebook](https://www.kaggle.com/code/dnth90/timm-at-the-edge).
 
