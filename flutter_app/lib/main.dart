@@ -51,11 +51,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future runClassification() async {
-    stopwatch.start();
     objDetect = [];
     //pick an image
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
 
+    stopwatch.start();
     //get prediction
     _imagePrediction = await _imageModel!
         .getImagePrediction(await File(image!.path).readAsBytes());
