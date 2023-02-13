@@ -15,7 +15,9 @@ A companion repo for the blog post [PyTorch at the Edge: Deploying Over 964 TIMM
 ## ⛄ Demo
 The following screen recording shows the app running in real time.
 
-![anim](https://user-images.githubusercontent.com/6821286/217421782-af8222e1-a9f4-4526-8a5a-3ee595b4a2ac.gif)
+![inf](https://user-images.githubusercontent.com/6821286/218454726-62606abe-49b7-46d2-87a5-40ab039a45c4.gif)
+
+
 
 Install the pre-built `.apk` on your Android phone [here](https://github.com/dnth/timm-flutter-pytorch-lite-blogpost/blob/main/app-release.apk?raw=true).
 
