@@ -8,6 +8,8 @@ import 'package:pytorch_lite/pigeon.dart';
 import 'package:pytorch_lite/pytorch_lite.dart';
 
 import 'package:empty_widget/empty_widget.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MyApp());
 
@@ -97,6 +99,14 @@ class _MyAppState extends State<MyApp> {
     stopwatch.reset();
   }
 
+  Future<void> _onOpen(LinkableElement link) async {
+    if (await canLaunch(link.url)) {
+      await launch(link.url);
+    } else {
+      throw 'Could not launch $link';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -165,6 +175,19 @@ class _MyAppState extends State<MyApp> {
                             ),
                           )
                         : Image.file(_image!),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Linkify(
+                  onOpen: (link) async {
+                    if (await canLaunch(link.url)) {
+                      await launch(link.url);
+                    } else {
+                      throw 'Could not launch $link';
+                    }
+                  },
+                  text: "Made by https://dicksonneoh.com",
+                ),
               ),
             ],
           ),
