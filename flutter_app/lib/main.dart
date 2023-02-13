@@ -52,8 +52,7 @@ class _MyAppState extends State<MyApp> {
     stopwatch.start();
     objDetect = [];
     //pick an image
-    final PickedFile? image =
-        await _picker.getImage(source: ImageSource.gallery);
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
 
     //get prediction
     _imagePrediction = await _imageModel!
@@ -111,7 +110,7 @@ class _MyAppState extends State<MyApp> {
           onPressed: runClassification,
         ),
         body: Container(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -121,11 +120,11 @@ class _MyAppState extends State<MyApp> {
                   child: Column(
                     children: [
                       Text("Disease: $_imagePrediction",
-                          style: TextStyle(fontSize: 20)),
+                          style: const TextStyle(fontSize: 20)),
                       Text("Confidence: $_predictionConfidence %",
-                          style: TextStyle(fontSize: 20)),
+                          style: const TextStyle(fontSize: 20)),
                       Text("Inference time: $inferenceTime ms",
-                          style: TextStyle(fontSize: 20)),
+                          style: const TextStyle(fontSize: 20)),
                     ],
                   ),
                 ),
