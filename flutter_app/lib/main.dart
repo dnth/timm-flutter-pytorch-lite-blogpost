@@ -28,6 +28,8 @@ class _MyAppState extends State<MyApp> {
   bool objectDetection = false;
   List<ResultObjectDetection?> objDetect = [];
 
+  int inferenceTime = 0;
+
   final stopwatch = Stopwatch();
 
   @override
@@ -120,6 +122,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future runClassification() async {
+    stopwatch.start();
     objDetect = [];
     //pick a random image
     final PickedFile? image =
@@ -159,6 +162,13 @@ class _MyAppState extends State<MyApp> {
       //this.objDetect = objDetect;
       _image = File(image.path);
     });
+
+    stopwatch.stop();
+    print("Inference time");
+    inferenceTime = stopwatch.elapsedMilliseconds;
+    print(inferenceTime);
+    print("ms");
+    stopwatch.reset();
   }
 
 /*
@@ -196,6 +206,8 @@ class _MyAppState extends State<MyApp> {
                       Text("Disease: $_imagePrediction",
                           style: TextStyle(fontSize: 20)),
                       Text("Confidence: $_predictionConfidence %",
+                          style: TextStyle(fontSize: 20)),
+                      Text("Inference time: $inferenceTime ms",
                           style: TextStyle(fontSize: 20)),
                     ],
                   ),
