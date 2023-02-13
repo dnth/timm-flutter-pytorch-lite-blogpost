@@ -6,11 +6,11 @@ A companion repo for the blog post [PyTorch at the Edge: Deploying Over 964 TIMM
 
 ## 📂 Folder Structure
 
-* `data` -- Stores all the data to train the model.
+* `data/` -- Stores all the data to train the model.
 
-* `flutter_app` -- Codes for the Flutter app.
+* `flutter_app/` -- Codes for the Flutter app.
 
-* `train` -- Training notebook and related files.
+* `train/` -- Training notebooks and related files.
 
 ## ⛄ Demo
 The following screen recording shows the app running in real time.
