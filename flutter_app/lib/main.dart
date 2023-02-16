@@ -95,11 +95,11 @@ class _MyAppState extends State<MyApp> {
                   child: Column(
                     children: [
                       Text("Disease: $_imagePrediction",
-                          style: const TextStyle(fontSize: 20)),
+                          style: const TextStyle(fontSize: 18)),
                       Text("Confidence: $_predictionConfidence %",
-                          style: const TextStyle(fontSize: 20)),
+                          style: const TextStyle(fontSize: 18)),
                       Text("Inference time: $_inferenceTime ms",
-                          style: const TextStyle(fontSize: 20)),
+                          style: const TextStyle(fontSize: 18)),
                     ],
                   ),
                 ),
