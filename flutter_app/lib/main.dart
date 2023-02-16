@@ -120,14 +120,14 @@ class _MyAppState extends State<MyApp> {
                         image: null,
                         packageImage: PackageImage.Image_3,
                         title: 'No image',
-                        subTitle: 'Select an image or upload your own',
+                        subTitle: 'Select an image',
                         titleTextStyle: const TextStyle(
-                          fontSize: 15,
+                          fontSize: 20,
                           color: Color(0xff9da9c7),
                           fontWeight: FontWeight.w500,
                         ),
                         subtitleTextStyle: const TextStyle(
-                          fontSize: 14,
+                          fontSize: 18,
                           color: Color(0xffabb8d6),
                         ),
                       )
