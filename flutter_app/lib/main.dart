@@ -70,14 +70,6 @@ class _MyAppState extends State<MyApp> {
     stopwatch.reset();
   }
 
-  Future<void> _onOpen(LinkableElement link) async {
-    if (await canLaunch(link.url)) {
-      await launch(link.url);
-    } else {
-      throw 'Could not launch $link';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
