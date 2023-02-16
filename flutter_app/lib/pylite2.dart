@@ -144,45 +144,7 @@ class ClassificationModel {
     return labels[maxScoreIndex];
   }
 
-  Future<Map<String, String?>> getImagePredictionMapOptim(
-      Uint8List imageAsBytes,
-      {List<double> mean = TORCHVISION_NORM_MEAN_RGB,
-      List<double> std = TORCHVISION_NORM_STD_RGB}) async {
-    assert(mean.length == 3, "mean should have size of 3");
-    assert(std.length == 3, "std should have size of 3");
-
-    final prediction = await ModelApi().getImagePredictionList(
-        _index, imageAsBytes, null, null, null, mean, std);
-
-    double maxScore = double.negativeInfinity;
-    int maxScoreIndex = -1;
-    for (var i = 0; i < prediction!.length; i++) {
-      if (prediction[i]! > maxScore) {
-        maxScore = prediction[i]!;
-        maxScoreIndex = i;
-      }
-    }
-
-    //Getting sum of exp
-    double? sumExp = 0.0;
-    if (prediction != null) {
-      for (var element in prediction) {
-        sumExp = sumExp! + exp(element!);
-      }
-    }
-
-    final predictionProbabilities =
-        prediction.map((element) => math.exp(element!) / sumExp!).toList();
-
-    final maxProbability = (predictionProbabilities[maxScoreIndex]) * 100.0;
-
-    return {
-      "label": labels[maxScoreIndex],
-      "probability": maxProbability.toStringAsFixed(2)
-    };
-  }
-
-  Future<Map<String, String?>> getImagePredictionMap(Uint8List imageAsBytes,
+  Future<Map<String, String>> getImagePredictionResult(Uint8List imageAsBytes,
       {List<double> mean = TORCHVISION_NORM_MEAN_RGB,
       List<double> std = TORCHVISION_NORM_STD_RGB}) async {
     // Assert mean std
@@ -192,34 +154,38 @@ class ClassificationModel {
     final List<double?>? prediction = await ModelApi().getImagePredictionList(
         _index, imageAsBytes, null, null, null, mean, std);
 
-    double maxScore = double.negativeInfinity;
-    int maxScoreIndex = -1;
-    for (int i = 0; i < prediction!.length; i++) {
-      if (prediction[i]! > maxScore) {
-        maxScore = prediction[i]!;
+    print("prediction");
+    print(prediction);
+
+    // Get the index of the max score
+    int maxScoreIndex = 0;
+    for (int i = 1; i < prediction!.length; i++) {
+      if (prediction[i]! > prediction[maxScoreIndex]!) {
         maxScoreIndex = i;
       }
     }
 
+    print("maxScoreIndex");
+    print(maxScoreIndex);
+
     //Getting sum of exp
-    double? sumExp = 0.0;
-    if (prediction != null) {
-      for (var element in prediction) {
-        sumExp = sumExp! + exp(element!);
-      }
+    double sumExp = 0.0;
+    for (var element in prediction) {
+      sumExp = sumExp + math.exp(element!);
     }
 
-    List<double?> predictionProbabilities = [];
-    if (prediction != null) {
-      for (var element in prediction) {
-        predictionProbabilities.add(exp(element!) / sumExp!);
-      }
-    }
+    print("sumExp");
+    print(sumExp);
 
-    String maxProbability =
-        (predictionProbabilities[maxScoreIndex]! * 100).toStringAsFixed(2);
+    final predictionProbabilities =
+        prediction.map((element) => math.exp(element!) / sumExp).toList();
 
-    return {"label": labels[maxScoreIndex], "probability": maxProbability};
+    final maxProbability = (predictionProbabilities[maxScoreIndex]) * 100.0;
+
+    return {
+      "label": labels[maxScoreIndex],
+      "probability": maxProbability.toStringAsFixed(2)
+    };
   }
 
   ///predicts image but returns the raw net output
