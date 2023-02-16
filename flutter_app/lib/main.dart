@@ -26,18 +26,13 @@ class _MyAppState extends State<MyApp> {
   File? _image;
   final ImagePicker _picker = ImagePicker();
   int _inferenceTime = 0;
+
   final stopwatch = Stopwatch();
 
   @override
   void initState() {
     super.initState();
     loadModel();
-  }
-
-  double getMaxPredictionValue(Map<String, dynamic> data) {
-    List<double> prediction =
-        List.castFrom<dynamic, double>(data['probabilities']);
-    return prediction.reduce((currMax, val) => currMax > val ? currMax : val);
   }
 
   //load your model
