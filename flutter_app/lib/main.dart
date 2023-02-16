@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
 
     // run inference
     var result = await _imageModel!
-        .getImagePredictionMap(await File(image!.path).readAsBytes());
+        .getImagePredictionMapOptim(await File(image!.path).readAsBytes());
 
     // print(result);
 

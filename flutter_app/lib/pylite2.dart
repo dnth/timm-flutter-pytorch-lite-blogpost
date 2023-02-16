@@ -10,6 +10,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pytorch_lite/pigeon.dart';
 
 export 'enums/dtype.dart';
+import 'dart:math' as math;
 
 const TORCHVISION_NORM_MEAN_RGB = [0.485, 0.456, 0.406];
 const TORCHVISION_NORM_STD_RGB = [0.229, 0.224, 0.225];
@@ -141,6 +142,44 @@ class ClassificationModel {
     }
 
     return labels[maxScoreIndex];
+  }
+
+  Future<Map<String, String?>> getImagePredictionMapOptim(
+      Uint8List imageAsBytes,
+      {List<double> mean = TORCHVISION_NORM_MEAN_RGB,
+      List<double> std = TORCHVISION_NORM_STD_RGB}) async {
+    assert(mean.length == 3, "mean should have size of 3");
+    assert(std.length == 3, "std should have size of 3");
+
+    final prediction = await ModelApi().getImagePredictionList(
+        _index, imageAsBytes, null, null, null, mean, std);
+
+    double maxScore = double.negativeInfinity;
+    int maxScoreIndex = -1;
+    for (var i = 0; i < prediction!.length; i++) {
+      if (prediction[i]! > maxScore) {
+        maxScore = prediction[i]!;
+        maxScoreIndex = i;
+      }
+    }
+
+    //Getting sum of exp
+    double? sumExp = 0.0;
+    if (prediction != null) {
+      for (var element in prediction) {
+        sumExp = sumExp! + exp(element!);
+      }
+    }
+
+    final predictionProbabilities =
+        prediction.map((element) => math.exp(element!) / sumExp!).toList();
+
+    final maxProbability = (predictionProbabilities[maxScoreIndex]) * 100.0;
+
+    return {
+      "label": labels[maxScoreIndex],
+      "probability": maxProbability.toStringAsFixed(2)
+    };
   }
 
   Future<Map<String, String?>> getImagePredictionMap(Uint8List imageAsBytes,
