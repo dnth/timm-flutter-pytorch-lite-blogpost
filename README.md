@@ -15,7 +15,8 @@ A companion repo for the blog post [PyTorch at the Edge: Deploying Over 964 TIMM
 ## ⛄ Demo
 The following screen recording shows the app running in real time.
 
-https://user-images.githubusercontent.com/6821286/219364335-068d0e65-4322-44f1-a3c7-787fb099fc5f.mp4
+
+![inf](https://user-images.githubusercontent.com/6821286/219454933-20798d7a-84c6-4505-bb08-72d012280836.gif)
 
 
 
