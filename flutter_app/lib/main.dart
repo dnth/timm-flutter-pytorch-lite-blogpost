@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
 import 'package:flutter/services.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
-// import 'package:pytorch_lite/pigeon.dart';
-// import 'package:pytorch_lite/pytorch_lite.dart';
-
-import 'pylite2.dart';
+import 'pytorch_lite_model.dart';
 import 'package:empty_widget/empty_widget.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:url_launcher/url_launcher.dart';
