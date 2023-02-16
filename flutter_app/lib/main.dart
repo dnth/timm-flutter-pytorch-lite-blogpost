@@ -77,9 +77,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Paddy Disease Classifier'),
-        ),
+        appBar: AppBar(title: const Text('Paddy Disease Classifier')),
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.camera),
           onPressed: runClassification,
@@ -92,15 +90,31 @@ class _MyAppState extends State<MyApp> {
               Center(
                 child: Visibility(
                   visible: _imagePrediction != null,
-                  child: Column(
-                    children: [
-                      Text("Disease: $_imagePrediction",
-                          style: const TextStyle(fontSize: 18)),
-                      Text("Confidence: $_predictionConfidence %",
-                          style: const TextStyle(fontSize: 18)),
-                      Text("Inference time: $_inferenceTime ms",
-                          style: const TextStyle(fontSize: 18)),
-                    ],
+                  child: Card(
+                    margin: const EdgeInsets.all(8.0),
+                    elevation: 5,
+                    shape: RoundedRectangleBorder(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(12)),
+                        side: BorderSide(
+                            color: Theme.of(context).colorScheme.outline)),
+                    child: SizedBox(
+                      width: 300,
+                      height: 80,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Text("Disease: $_imagePrediction",
+                                style: const TextStyle(fontSize: 18)),
+                            Text("Confidence: $_predictionConfidence %",
+                                style: const TextStyle(fontSize: 18)),
+                            Text("Inference time: $_inferenceTime ms",
+                                style: const TextStyle(fontSize: 18)),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
