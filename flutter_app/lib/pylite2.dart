@@ -177,11 +177,10 @@ class ClassificationModel {
       }
     }
 
-    return {
-      "label": labels[maxScoreIndex],
-      "probabilities":
-          (predictionProbabilities[maxScoreIndex]! * 100).toStringAsFixed(2)
-    };
+    String maxProbability =
+        (predictionProbabilities[maxScoreIndex]! * 100).toStringAsFixed(2);
+
+    return {"label": labels[maxScoreIndex], "probability": maxProbability};
   }
 
   ///predicts image but returns the raw net output

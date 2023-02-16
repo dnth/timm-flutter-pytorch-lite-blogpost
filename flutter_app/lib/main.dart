@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
 
     setState(() {
       _imagePrediction = result['label'];
-      _predictionConfidence = result['probabilities'];
+      _predictionConfidence = result['probability'];
       _image = File(image.path);
       _inferenceTime = stopwatch.elapsedMilliseconds;
     });
@@ -108,7 +108,7 @@ class _MyAppState extends State<MyApp> {
                         image: null,
                         packageImage: PackageImage.Image_3,
                         title: 'No image',
-                        // subTitle: 'Select an image or upload your own',
+                        subTitle: 'Select an image or upload your own',
                         titleTextStyle: const TextStyle(
                           fontSize: 15,
                           color: Color(0xff9da9c7),
