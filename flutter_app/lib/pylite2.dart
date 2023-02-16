@@ -144,7 +144,7 @@ class ClassificationModel {
     return labels[maxScoreIndex];
   }
 
-  Future<Map<String, String>> getImagePredictionResult(Uint8List imageAsBytes,
+  Future<Map<String, dynamic>> getImagePredictionResult(Uint8List imageAsBytes,
       {List<double> mean = TORCHVISION_NORM_MEAN_RGB,
       List<double> std = TORCHVISION_NORM_STD_RGB}) async {
     // Assert mean std
@@ -154,9 +154,6 @@ class ClassificationModel {
     final List<double?>? prediction = await ModelApi().getImagePredictionList(
         _index, imageAsBytes, null, null, null, mean, std);
 
-    print("prediction");
-    print(prediction);
-
     // Get the index of the max score
     int maxScoreIndex = 0;
     for (int i = 1; i < prediction!.length; i++) {
@@ -165,26 +162,18 @@ class ClassificationModel {
       }
     }
 
-    print("maxScoreIndex");
-    print(maxScoreIndex);
-
     //Getting sum of exp
     double sumExp = 0.0;
     for (var element in prediction) {
       sumExp = sumExp + math.exp(element!);
     }
 
-    print("sumExp");
-    print(sumExp);
-
     final predictionProbabilities =
         prediction.map((element) => math.exp(element!) / sumExp).toList();
 
-    final maxProbability = (predictionProbabilities[maxScoreIndex]) * 100.0;
-
     return {
       "label": labels[maxScoreIndex],
-      "probability": maxProbability.toStringAsFixed(2)
+      "probability": predictionProbabilities[maxScoreIndex]
     };
   }
 

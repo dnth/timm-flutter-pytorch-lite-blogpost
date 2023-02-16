@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   String? _predictionConfidence;
   File? _image;
   final ImagePicker _picker = ImagePicker();
-  int _inferenceTime = 0;
+  int? _inferenceTime;
 
   final stopwatch = Stopwatch();
 
@@ -51,23 +51,24 @@ class _MyAppState extends State<MyApp> {
     //pick an image
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
 
-    stopwatch.start();
+    if (image != null) {
+      stopwatch.start();
+      // run inference
+      var result = await _imageModel!
+          .getImagePredictionResult(await File(image.path).readAsBytes());
 
-    // run inference
-    var result = await _imageModel!
-        .getImagePredictionResult(await File(image!.path).readAsBytes());
+      stopwatch.stop();
 
-    // print(result);
+      setState(() {
+        _imagePrediction = result['label'];
+        _predictionConfidence =
+            (result['probability'] * 100).toStringAsFixed(2);
+        _image = File(image.path);
+        _inferenceTime = stopwatch.elapsedMilliseconds;
+      });
 
-    stopwatch.stop();
-
-    setState(() {
-      _imagePrediction = result['label'];
-      _predictionConfidence = result['probability'];
-      _image = File(image.path);
-      _inferenceTime = stopwatch.elapsedMilliseconds;
-    });
-    stopwatch.reset();
+      stopwatch.reset();
+    }
   }
 
   @override
