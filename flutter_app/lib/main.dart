@@ -53,6 +53,7 @@ class _MyAppState extends State<MyApp> {
 
     if (image != null) {
       stopwatch.start();
+
       // run inference
       var result = await _imageModel!
           .getImagePredictionResult(await File(image.path).readAsBytes());
