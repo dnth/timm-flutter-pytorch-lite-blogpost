@@ -5,8 +5,9 @@ import 'package:flutter/services.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:pytorch_lite/pigeon.dart';
-import 'package:pytorch_lite/pytorch_lite.dart';
+// import 'package:pytorch_lite/pytorch_lite.dart';
 
+import 'pylite2.dart';
 import 'package:empty_widget/empty_widget.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,22 +21,23 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   ClassificationModel? _imageModel;
-  late ModelObjectDetection _objectModel;
   String? _imagePrediction;
   String? _predictionConfidence;
   File? _image;
   final ImagePicker _picker = ImagePicker();
-  bool objectDetection = false;
-  List<ResultObjectDetection?> objDetect = [];
-
-  int inferenceTime = 0;
-
+  int _inferenceTime = 0;
   final stopwatch = Stopwatch();
 
   @override
   void initState() {
     super.initState();
     loadModel();
+  }
+
+  double getMaxPredictionValue(Map<String, dynamic> data) {
+    List<double> prediction =
+        List.castFrom<dynamic, double>(data['probabilities']);
+    return prediction.reduce((currMax, val) => currMax > val ? currMax : val);
   }
 
   //load your model
@@ -51,51 +53,25 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future runClassification() async {
-    objDetect = [];
     //pick an image
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
 
     stopwatch.start();
-    //get prediction
-    _imagePrediction = await _imageModel!
-        .getImagePrediction(await File(image!.path).readAsBytes());
 
-    List<double?>? predictionList = await _imageModel!.getImagePredictionList(
-      await File(image.path).readAsBytes(),
-    );
+    // run inference
+    var result = await _imageModel!
+        .getImagePredictionMap(await File(image!.path).readAsBytes());
 
-    print(predictionList);
-    List<double?>? predictionListProbabilites =
-        await _imageModel!.getImagePredictionListProbabilities(
-      await File(image.path).readAsBytes(),
-    );
-    //Gettting the highest Probability
-    double maxScoreProbability = double.negativeInfinity;
-    double sumOfProbabilites = 0;
-    int index = 0;
-    for (int i = 0; i < predictionListProbabilites!.length; i++) {
-      if (predictionListProbabilites[i]! > maxScoreProbability) {
-        maxScoreProbability = predictionListProbabilites[i]!;
-        sumOfProbabilites = sumOfProbabilites + predictionListProbabilites[i]!;
-        index = i;
-      }
-    }
-    print(predictionListProbabilites);
-    print(index);
-    print(sumOfProbabilites);
-    print(maxScoreProbability);
-    _predictionConfidence = (maxScoreProbability * 100).toStringAsFixed(2);
-
-    setState(() {
-      //this.objDetect = objDetect;
-      _image = File(image.path);
-    });
+    // print(result);
 
     stopwatch.stop();
-    print("Inference time");
-    inferenceTime = stopwatch.elapsedMilliseconds;
-    print(inferenceTime);
-    print("ms");
+
+    setState(() {
+      _imagePrediction = result['label'];
+      _predictionConfidence = result['probabilities'];
+      _image = File(image.path);
+      _inferenceTime = stopwatch.elapsedMilliseconds;
+    });
     stopwatch.reset();
   }
 
@@ -133,48 +109,30 @@ class _MyAppState extends State<MyApp> {
                           style: const TextStyle(fontSize: 20)),
                       Text("Confidence: $_predictionConfidence %",
                           style: const TextStyle(fontSize: 20)),
-                      Text("Inference time: $inferenceTime ms",
+                      Text("Inference time: $_inferenceTime ms",
                           style: const TextStyle(fontSize: 20)),
                     ],
                   ),
                 ),
               ),
               Expanded(
-                child: objDetect.isNotEmpty
-                    ? _image == null
-                        ? EmptyWidget(
-                            image: null,
-                            packageImage: PackageImage.Image_3,
-                            title: 'No image',
-                            // subTitle: 'Select an image or upload your own',
-                            titleTextStyle: const TextStyle(
-                              fontSize: 15,
-                              color: Color(0xff9da9c7),
-                              fontWeight: FontWeight.w500,
-                            ),
-                            subtitleTextStyle: const TextStyle(
-                              fontSize: 14,
-                              color: Color(0xffabb8d6),
-                            ),
-                          )
-                        : _objectModel.renderBoxesOnImage(_image!, objDetect)
-                    : _image == null
-                        ? EmptyWidget(
-                            image: null,
-                            packageImage: PackageImage.Image_3,
-                            title: 'No image',
-                            // subTitle: 'Select an image or upload your own',
-                            titleTextStyle: const TextStyle(
-                              fontSize: 15,
-                              color: Color(0xff9da9c7),
-                              fontWeight: FontWeight.w500,
-                            ),
-                            subtitleTextStyle: const TextStyle(
-                              fontSize: 14,
-                              color: Color(0xffabb8d6),
-                            ),
-                          )
-                        : Image.file(_image!),
+                child: _image == null
+                    ? EmptyWidget(
+                        image: null,
+                        packageImage: PackageImage.Image_3,
+                        title: 'No image',
+                        // subTitle: 'Select an image or upload your own',
+                        titleTextStyle: const TextStyle(
+                          fontSize: 15,
+                          color: Color(0xff9da9c7),
+                          fontWeight: FontWeight.w500,
+                        ),
+                        subtitleTextStyle: const TextStyle(
+                          fontSize: 14,
+                          color: Color(0xffabb8d6),
+                        ),
+                      )
+                    : Image.file(_image!),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
