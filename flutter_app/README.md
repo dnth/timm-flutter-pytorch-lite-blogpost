@@ -52,3 +52,11 @@ flutter doctor -v
 
 • No issues found!
 ```
+
+## Run the app
+
+```
+cd flutter_app/
+flutter pub get
+flutter run
+```
