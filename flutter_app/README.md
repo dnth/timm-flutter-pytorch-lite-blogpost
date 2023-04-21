@@ -53,7 +53,9 @@ flutter doctor -v
 • No issues found!
 ```
 
-## Run the app
+## Commands
+
+Run the following commands from the root of the repository:
 
 ```
 cd flutter_app/
